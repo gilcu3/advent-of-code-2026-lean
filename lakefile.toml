@@ -1,0 +1,20 @@
+name = "aoc2026"
+version = "0.1.0"
+defaultTargets = ["solve"]
+
+# Rebuild the days when an example file changes, so their #examples checks run again.
+[[input_dir]]
+name = "examples"
+path = "examples"
+text = true
+
+[[lean_lib]]
+name = "Aoc"
+
+[[lean_lib]]
+name = "Days"
+needs = ["@/examples"]
+
+[[lean_exe]]
+name = "solve"
+root = "Main"
